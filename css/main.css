@@ -56,7 +56,9 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+canvas {
+    outline: 1px solid #333;
+}
 
 
 
