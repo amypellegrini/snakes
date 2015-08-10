@@ -1,16 +1,37 @@
 define(['./models/game-play'], function(GamePlay) {
-  var
-      canvas = document.getElementById('canvas'),
-      context = canvas.getContext('2d');
+  var SnakesApp = function() {
+    var
+        ui = {
+          canvas: null,
+          points: null,
+          start: null,
+          pause: null
+        },
+        context = null,
 
-  var SnakesApp = {
-    ui: {
-      canvas: canvas,
-      points: null,
-      start: null,
-      pause: null
-    },
-    context: context,
-    gamePlay: new GamePlay()
+        setUI = function() {
+          ui.canvas = document.getElementById('canvas');
+          ui.start = document.getElementById('start-button');
+        },
+
+        setContext = function() {
+          context = ui.canvas.getContext('2d');
+        },
+
+        bindEvents = function() {
+
+        },
+
+        init = function() {
+          setUI();
+          setContext();
+          bindEvents();
+        };
+
+    return {
+      ui: ui,
+      context: context,
+      gamePlay: new GamePlay()
+    };
   };
 });
